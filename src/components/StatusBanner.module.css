@@ -1,0 +1,49 @@
+.banner {
+  position: fixed;
+  top: max(0.8rem, env(safe-area-inset-top));
+  right: 0.8rem;
+  left: 0.8rem;
+  z-index: 60;
+  display: grid;
+  gap: 0.45rem;
+  pointer-events: none;
+}
+
+.item {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  max-width: min(100%, 32rem);
+  padding: 0.72rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(49, 95, 67, 0.14);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--cor-texto);
+  box-shadow: 0 14px 34px rgba(31, 58, 43, 0.12);
+  backdrop-filter: blur(16px);
+  font-weight: 850;
+  font-size: 0.84rem;
+}
+
+.item[data-tipo='offline'] {
+  border-color: rgba(191, 78, 70, 0.28);
+}
+
+.item[data-tipo='gps'] {
+  border-color: rgba(214, 129, 69, 0.32);
+}
+
+.icone {
+  color: var(--cor-verde);
+  font-size: 1.08rem;
+  flex: 0 0 auto;
+}
+
+@media (min-width: 760px) {
+  .banner {
+    left: 1.4rem;
+    right: auto;
+  }
+}

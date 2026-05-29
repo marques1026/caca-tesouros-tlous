@@ -1,0 +1,217 @@
+.tela {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem 1rem 3rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #eef5f1 100%);
+}
+
+.imagemFundo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.08) contrast(1.04) brightness(1.1);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.78) 44%, rgba(255, 255, 255, 0.22) 100%),
+    radial-gradient(circle at 20% 15%, rgba(86, 209, 141, 0.18), transparent 24rem);
+}
+
+.conteudo {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 42rem);
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.1rem, 4vw, 2rem);
+  border: var(--borda-card);
+  border-radius: 2rem;
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra-forte);
+  backdrop-filter: var(--blur-card);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trofeu {
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1.25rem;
+  background: var(--cor-menta);
+  color: var(--cor-verde);
+  font-size: 2rem;
+}
+
+.cabecalho {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.rotulo,
+.titulo,
+.mensagem p,
+.palavraRotulo,
+.estatisticasTitulo {
+  margin: 0;
+}
+
+.rotulo {
+  color: var(--cor-verde);
+  font-size: 0.75rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.titulo {
+  color: var(--cor-texto);
+  font-size: clamp(2.6rem, 12vw, 5rem);
+  line-height: 0.92;
+  letter-spacing: -0.08em;
+}
+
+.linha {
+  width: 7rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cor-verde), var(--cor-verde-neon));
+}
+
+.palavraChave {
+  padding: 1rem;
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(49, 95, 67, 0.12);
+}
+
+.palavraRotulo {
+  color: var(--cor-texto-suave);
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.palavraTexto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.letra {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, #e8fff0, #ffffff);
+  color: var(--cor-verde);
+  font-size: 1.35rem;
+  font-weight: 950;
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 67, 0.12);
+  animation: subir 0.45s ease both;
+}
+
+.mensagem {
+  display: grid;
+  gap: 0.55rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.45;
+}
+
+.mensagem strong {
+  color: var(--cor-texto);
+}
+
+.estatisticas {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.estatisticasTitulo {
+  color: var(--cor-verde);
+  font-size: 0.85rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.stat {
+  padding: 0.85rem 0.65rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(49, 95, 67, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+.statNumero {
+  display: block;
+  color: var(--cor-verde);
+  font-size: 1.45rem;
+  font-weight: 950;
+}
+
+.statRotulo {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--cor-texto-suave);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.acoes {
+  display: flex;
+}
+
+.botaoReiniciar {
+  min-height: 3.2rem;
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--cor-verde), #20875b, var(--cor-verde-neon));
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.iconeBotao {
+  font-size: 1rem;
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

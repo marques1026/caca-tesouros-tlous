@@ -1,0 +1,246 @@
+.tela {
+  min-height: 100vh;
+  padding: 5.4rem 1rem 7.5rem;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(86, 209, 141, 0.22), transparent 22rem),
+    radial-gradient(circle at 12% 80%, rgba(121, 184, 255, 0.18), transparent 24rem),
+    linear-gradient(180deg, #ffffff 0%, #eef5f1 100%);
+}
+
+.card {
+  width: min(100%, 68rem);
+  overflow: hidden;
+  display: grid;
+  border: var(--borda-card);
+  border-radius: 2rem;
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra-forte);
+  backdrop-filter: var(--blur-card);
+}
+
+.imagemLateral {
+  position: relative;
+  min-height: 16rem;
+  overflow: hidden;
+}
+
+.imagemLateral img {
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  object-fit: cover;
+  filter: saturate(1.08) contrast(1.04) brightness(1.06);
+}
+
+.imagemLateral::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(255, 255, 255, 0.9));
+}
+
+.conteudo {
+  padding: clamp(1rem, 4vw, 2rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.cabecalho {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.simbolo {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1rem;
+  background: var(--cor-menta);
+  color: var(--cor-verde);
+  font-size: 1.4rem;
+}
+
+.rotulo,
+.titulo,
+.fraseCurta,
+.secaoRotulo,
+.dicaEnigma {
+  margin: 0;
+}
+
+.rotulo {
+  color: var(--cor-verde);
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.titulo {
+  color: var(--cor-texto);
+  font-size: clamp(2.3rem, 10vw, 4.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.fraseCurta {
+  color: var(--cor-texto-suave);
+  line-height: 1.45;
+}
+
+.secaoPistas,
+.bloqueio,
+.formulario,
+.feedbackErro {
+  border: 1px solid rgba(49, 95, 67, 0.12);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.secaoPistas {
+  padding: 1rem;
+}
+
+.linhaSecao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--cor-texto-suave);
+  font-weight: 900;
+}
+
+.secaoRotulo {
+  color: var(--cor-verde);
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pistas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.pista,
+.pistaVazia {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.65rem;
+  padding: 0.62rem 0.75rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(49, 95, 67, 0.14);
+  color: var(--cor-texto);
+  font-weight: 850;
+}
+
+.pistaVazia {
+  color: var(--cor-texto-suave);
+}
+
+.bloqueio {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  color: #8a5730;
+  background: #fff5e9;
+  font-weight: 850;
+}
+
+.bloqueioIcone,
+.feedbackIcone,
+.iconeBotao {
+  flex: 0 0 auto;
+}
+
+.formulario {
+  padding: 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.labelResposta {
+  color: var(--cor-texto);
+  font-weight: 950;
+}
+
+.campoWrapper {
+  position: relative;
+}
+
+.campoResposta {
+  width: 100%;
+  min-height: 3.4rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(49, 95, 67, 0.2);
+  background: #ffffff;
+  color: var(--cor-texto);
+  padding: 0 3rem 0 1rem;
+  font-size: 1.08rem;
+  font-weight: 850;
+}
+
+.campoResposta::placeholder {
+  color: rgba(97, 112, 100, 0.72);
+}
+
+.inputIcone {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cor-verde);
+  font-size: 1.25rem;
+}
+
+.dicaEnigma {
+  color: var(--cor-texto-suave);
+  font-size: 0.93rem;
+}
+
+.botaoConfirmar {
+  width: 100%;
+}
+
+.feedbackErro {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  color: var(--cor-erro);
+  background: #fff0ee;
+  font-weight: 850;
+}
+
+.tremer {
+  animation: tremer 0.28s ease-in-out;
+}
+
+@keyframes tremer {
+  0%, 100% { transform: translateX(0); }
+  33% { transform: translateX(-6px); }
+  66% { transform: translateX(6px); }
+}
+
+@media (min-width: 820px) {
+  .tela {
+    padding: 6rem 2rem 7rem;
+  }
+
+  .card {
+    grid-template-columns: 22rem 1fr;
+  }
+
+  .imagemLateral,
+  .imagemLateral img {
+    min-height: 100%;
+  }
+}
