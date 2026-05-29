@@ -12,7 +12,7 @@
 
 ## Como rodar
 
-Precisa ter Node.js 18+ instalado.
+Precisa ter Node.js 18+ instalado
 
 ```bash
 npm install
@@ -36,7 +36,7 @@ npm run preview
 - Sem GPS: desbloqueio sequencial (próximo ponto libera ao acertar o quiz atual)
 
 **Quiz**
-- Pergunta única por ponto, tema TLOU
+- Pergunta única por ponto, tema TLOUS
 - Acerto → pista completa no inventário
 - Erro → pista incompleta, pode tentar de novo depois
 
@@ -58,7 +58,7 @@ npm run preview
 
 ## Pontos no mapa
 
-Os 6 pontos ficam em locais reais do SENAI Roberto Mange, Campinas:
+Os 6 pontos ficam em locais reais do senai;
 
 | # | Local | Coordenadas |
 |---|---|---|
